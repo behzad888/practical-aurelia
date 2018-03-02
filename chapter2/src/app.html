@@ -1,0 +1,8 @@
+<template>
+  <require from='./custom/attributes/show-progress'></require>
+  <require from='./custom/elements/nav-bar'></require>
+  <nav-bar router.bind="router" show-progress.bind="router.isNavigating"></nav-bar>
+  <div class="container-fluid page-host">
+    <router-view></router-view>
+  </div>
+</template>

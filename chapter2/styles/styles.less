@@ -1,0 +1,73 @@
+@import (reference) "_variables";
+@import (reference) "_mixins";
+@import (once) "_animations";
+@import (once) "_bootstrap-overrides";
+@import (once) "_todo";
+
+html {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.splash {
+  position:absolute;
+  background: #1a1a1a;
+  width:100%;
+  height: 100%;
+  text-align: center;
+  padding: 5% 0 0 0;
+  box-sizing: border-box;
+  color: @color-secondary;
+
+
+  .logo {
+    margin: 20px 0;
+  }
+
+  .message {
+    font-size: 72px;
+    line-height: 72px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    .emboss-text;
+
+    small {
+      font-size: 0.3em;
+      font-weight: 200;
+    }
+  }
+
+  .fa-spin {
+    text-align: center;
+    display: inline-block;
+    font-size: 72px;
+    margin-top: 50px;
+  }
+}
+
+.demo-intro {
+  margin-top: 60px;
+  text-align: center;
+  a {
+    color: @color-primary;
+    text-decoration: underline;
+  }
+}
+.page-host {
+  position: relative;
+  margin: 0 0 60px 0;
+}
+
+section {
+  margin: 0 20px;
+}
+
+.pictureDetail {
+  max-width: 425px;
+}
+

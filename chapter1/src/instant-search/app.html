@@ -1,0 +1,20 @@
+<template>
+    <require from="./app.css"></require>
+    <require from="./search-for"></require>
+    <div id="main">
+        <div class="bar">
+            <!-- Create a binding between the searchString model and the text field -->
+            <input type="text" value.bind="searchString" placeholder="Enter your search terms" />
+        </div>
+        <ul>
+            <!-- Render a li element for every entry in the items array. Notice
+			 the custom search value converter "searchFor". It takes the value of the
+			 searchString model as an argument.
+		 -->
+            <li repeat.for="user of users | searchFor:searchString">
+                <a href.bind="user.html_url"><img src.bind="user.avatar_url" /></a>
+                <p>${user.login}</p>
+            </li>
+        </ul>
+    </div>
+</template>

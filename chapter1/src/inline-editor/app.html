@@ -1,0 +1,18 @@
+<template>
+    <require from="./app.css"></require>
+    <div id="main" click.trigger="hideTooltip()">
+
+        <!-- This is the tooltip. It is shown only when the showtooltip variable is truthful -->
+        <div class="tooltip" click.trigger="$event.stopPropagation()" show.bind="showtooltip">
+
+            <!--value.bind binds the contents of the text field with the "title" model.
+		    Any changes to the text field will automatically update the title, and
+		    all other bindings on the page that depend on it.  -->
+            <input type="text" value.bind="title" />
+        </div>
+
+        <!-- Call a method defined in the InlineEditorController that toggles
+    	the showtooltip variable -->
+        <p click.trigger="toggleTooltip($event)">${title}</p>
+    </div>
+</template>

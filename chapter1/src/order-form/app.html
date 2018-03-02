@@ -1,0 +1,20 @@
+<template>
+    <require from="./app.css"></require>
+    <require from="./currency-format"></require>
+    <form role="form">
+        <h1>Services</h1>
+        <ul>
+            <!-- Loop through the services array, assign a click handler, and set or
+			remove the "active" css class if needed -->
+            <li repeat.for="service of services" click.trigger="toggleActive(service)" class.bind="service.active?'active':''">
+                <!-- Notice the use of the currency filter, it will format the price -->
+                ${service.name} <span>${service.price | currencyFormat}</span>
+            </li>
+        </ul>
+
+        <div class="total">
+            <!-- Calculate the total price of all chosen services. Format it as currency. -->
+            Total: <span>${total | currencyFormat}</span>
+        </div>
+    </form>
+</template>

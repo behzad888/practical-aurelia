@@ -1,0 +1,8 @@
+<template>
+    <h1>Second Page</h1>
+
+    <h2>Level: ${status}</h2>
+    <h3>isPlugged: ${isPlugged}</h3>
+
+    <h1 if.bind="batteryLow === true">Battery Level Low ${status}%</h1>
+</template>

@@ -1,0 +1,15 @@
+<!-- app.html -->
+<template>
+  <!-- require menu file -->
+  <require from="./nav-bar.html"></require>
+  <!-- require bootstrap css file -->
+  <require from="bootstrap/css/bootstrap.css"></require>
+
+  <!-- using custom element -->
+  <nav-bar router.bind="router"></nav-bar>
+
+  <div class="page-host">
+    <!-- show routes  -->
+    <router-view></router-view>
+  </div>
+</template>

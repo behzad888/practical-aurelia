@@ -1,0 +1,28 @@
+<template>
+    <require from="./app.css"></require>
+    <section>
+        <div class="bar">
+            <!-- These two buttons switch the layout variable,
+			 which causes the correct UL to be shown. -->
+            <a class="list-icon" class.bind="layout == 'list'? 'active' : ''" click.trigger="layout = 'list'"></a>
+            <a class="grid-icon" class.bind="layout == 'grid'? 'active' : ''" click.trigger="layout = 'grid'"></a>
+        </div>
+
+        <!-- We have two layouts. We choose which one to show depending on the "layout" binding -->
+
+        <ul show.bind="layout == 'grid'"  class="grid">
+            <!-- A view with big photos and no text -->
+            <li repeat.for="item of pics">
+                <a href.bind="item.link" target="_blank"><img src.bind="item.images.low_resolution.url" /></a>
+            </li>
+        </ul>
+
+        <ul show.bind="layout == 'list'" class="list">
+            <!-- A compact view smaller photos and titles -->
+            <li repeat.for="item of pics">
+                <a href.bind="item.link" target="_blank"><img src.bind="item.images.thumbnail.url" /></a>
+                <p>${item.caption.text}</p>
+            </li>
+        </ul>
+    </section>
+</template>
